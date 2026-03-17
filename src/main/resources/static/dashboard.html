@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>SMS</h2>
+
+<ul>
+
+<li class="active" onclick="setActive(this);showDashboard()">Dashboard</li>
+
+<li onclick="setActive(this);showAddStudent()">Add Student</li>
+
+<li onclick="setActive(this);showSearch()">Search Student</li>
+
+<li onclick="logout()">Logout</li>
+
+</ul>
+
+</div>
+
+<div class="main">
+
+<h1>Student Management System</h1>
+
+<!-- Cards -->
+<div class="cards">
+
+<div class="card">
+<h3>Total Students</h3>
+<h1 id="studentCount">0</h1>
+</div>
+
+<div class="card">
+<h3>Status</h3>
+<p>Active</p>
+</div>
+
+</div>
+
+<!-- Charts Section -->
+<div class="charts">
+
+<canvas id="genderChart"></canvas>
+<canvas id="branchChart"></canvas>
+
+</div>
+
+<!-- Dynamic Content -->
+<div id="contentArea"></div>
+
+</div>
+
+<!-- Edit Modal -->
+<div id="editModal" class="modal">
+
+<div class="modal-content">
+
+<h2>Edit Student</h2>
+
+<input id="editRoll" placeholder="Roll Number">
+<input id="editName" placeholder="Name">
+
+<select id="editGender">
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+
+<input id="editBranch" placeholder="Branch">
+<input id="editMobile" placeholder="Mobile">
+<input id="editParent" placeholder="Parent Number">
+
+<div class="btnGroup">
+
+<button onclick="updateStudent()">Update</button>
+<button onclick="closeModal()">Cancel</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
